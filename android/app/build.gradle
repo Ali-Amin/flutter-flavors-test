@@ -24,6 +24,14 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+if (gradle.startParameter.taskNames[0] == "assembleProductionDebug")
+{
+    def keystorePropertiesFile = rootProject.file("key.properties")
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+
 android {
     compileSdkVersion 27
 
@@ -57,6 +65,7 @@ android {
             applicationId "com.example.flavorsexample.app1"
             versionCode 1
             versionName "1.0"
+            buildConfigField "String", "VARIANT", "\"dev\""
         }
  
         production {
