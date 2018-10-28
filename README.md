@@ -7,8 +7,7 @@
 
 	  android{
 	  
-			// Starting Here //
-      		flavorDimensions "flavor-type"
+      	    flavorDimensions "flavor-type"
       		
     	    productFlavors {
      		    development {
@@ -24,7 +23,6 @@
 	    	    versionCode 1
 	    	    versionName "1.0"
 	   	    }
-			//		//
 	    
 	}
 
